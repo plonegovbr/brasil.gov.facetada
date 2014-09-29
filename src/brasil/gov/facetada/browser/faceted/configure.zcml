@@ -1,0 +1,15 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:faceted="http://namespaces.zope.org/faceted"
+    i18n_domain="brasil.gov.facetada">
+
+  <include package="eea.facetednavigation" file="meta.zcml" />
+
+  <faceted:view
+    name="faceted-summary"
+    template="summary.pt"
+    title="Faceted items summary view"
+    permission="zope2.View"
+  />
+
+</configure>

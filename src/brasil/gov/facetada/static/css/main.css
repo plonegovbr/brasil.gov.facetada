@@ -1,0 +1,186 @@
+/*
+ *
+ * CSS com estilos aplicados apenas em Site Secom
+ *
+ * @Autor
+ *
+ * - Grupo TV1 - www.grupotv1.com.br
+ *
+ * @Referencias
+ *
+ * Lista de padrões, convenções e boas praticas CSS que devem ser seguidas.
+ * https://github.com/necolas/idiomatic-css/tree/master/translations/pt-BR
+ *
+ * Plugins para ordenar os atributos de CSS.
+ * http://csscomb.com/
+ *
+ * Validador de CSS do W3C.
+ * http://jigsaw.w3.org/css-validator/
+ */
+
+
+/* ==========================================================================
+   Navegação Facetada
+   ========================================================================== */
+
+#faceted-results { margin: 20px 0 0; }
+
+/*
+ * Estrutura padrão para elementos dos formulários
+ */
+
+#content #faceted-form fieldset {
+   margin: 0;
+   padding: 0;
+   border: none;
+}
+
+#content #faceted-form legend {
+   display: block;
+   float: none;
+   margin: 0;
+   padding: 0;
+   font-weight: normal;
+   font-size: 1em;
+}
+
+/*
+ * Barra de busca
+ */
+
+#faceted-form #top-area {
+    display: block;
+    margin: 0;
+    padding: 10px 15px 15px;
+    border-top: 5px solid #9fa5ae;
+    background-color: #e5e8ea;
+}
+
+#faceted-form #top-area legend {
+    color: #2c66ce;
+    text-transform: uppercase;
+    font-weight: normal;
+    font-size: 13px;
+    font-family: "open_sansbold", Arial, Helvetica, sans-serif;
+}
+
+#faceted-form #top-area input[type="text"] {
+    margin: 0 8px 0 0;
+    padding: 7px 0;
+    max-width: 760px;
+    width: 100%;
+    border: 1px solid #cfcfcf;
+    border-radius: 5px;
+    color: #333;
+    font-size: 14px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#faceted-form #top-area .searchButton {
+    margin-top: 9px;
+    padding: 5px 25px;
+    max-width: 130px;
+    width: 100%;
+    border: none;
+    border-radius: 5px;
+    background-color: #7d7d7d;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: normal;
+    font-size: 14px;
+    font-family: "open_sansbold", Arial, Helvetica, sans-serif;
+    cursor: pointer;
+}
+
+
+/*
+ * Coluna central - resultados de busca e de filtros
+ */
+
+#center-content-area { margin: 45px 260px 0 0; }
+
+/*
+ * Coluna direita
+ */
+
+#faceted-right-column {
+    float: right;
+    margin: 44px 0 0 0;
+    max-width: 228px;
+    width: 100%;
+    border: none;
+    border: 1px solid #c0c1c1;
+    border-radius: 5px;
+    background-color: #edeff1;
+}
+
+#faceted-right-column .faceted-widget {
+    padding: 14px;
+    border-bottom: 1px dotted #c0c1c1;
+}
+
+#faceted-right-column .faceted-widget:last-child { border: none; }
+
+#content #faceted-form #faceted-right-column ul { margin: 0; padding: 0; }
+
+#content #faceted-form #faceted-right-column li {
+    margin: 9px 0;
+    list-style: outside none;
+}
+
+#content #faceted-form #faceted-right-column .faceted-widget:first-child li { width: 100%; }
+
+#content #faceted-form #faceted-right-column legend {
+    display: block;
+    margin-bottom: 10px;
+    color: #172938;
+    font-weight: normal;
+    font-size: 12px;
+    font-family: "open_sansbold", Arial, Helvetica, sans-serif;
+}
+
+#content #faceted-form label {
+    margin: 0;
+    padding: 0;
+    color: #172938;
+    font-weight: normal;
+    font-size: 11px;
+    font-family: "open_sansregular", Arial, Helvetica, sans-serif;
+}
+
+#content #faceted-form #faceted-right-column input[type="checkbox"],
+#content #faceted-form #faceted-right-column input[type="radio"] {
+    margin: 4px 8px 0 0;
+}
+
+#content #faceted-form #faceted-right-column .faceted-daterange-widget-form div {
+    margin: 0 0 10px 0;
+}
+
+#content #faceted-form #faceted-right-column .faceted-daterange-widget-form input {
+    padding: 4px;
+    border: 1px solid #cfcfcf;
+    border-radius: 5px;
+    color: #333;
+    font-size: 14px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#content #faceted-right-column .faceted-daterange-widget-form div {
+    margin: 0;
+    width: 100%;
+}
+
+#content #faceted-right-column .faceted-daterange-widget-form label {
+    float: left;
+    margin-left: 1px;
+    max-width: 99px;
+    width: 100%;
+    line-height: 26px;
+}
+
+#content #faceted-right-column .faceted-daterange-widget-form input[type="text"] {
+    float: left;
+    max-width: 90px;
+    width: 100%;
+}
