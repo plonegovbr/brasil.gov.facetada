@@ -10,7 +10,14 @@ before_script:
   - export DISPLAY=:99.0
   - sh -e /etc/init.d/xvfb start
 script: bin/test
-after_success: bin/code-analysis
-after_failure: bin/buildout annotate -c travis.cfg
+after_success:
+  - bin/code-analysis
+  - bin/buildout -c coverage.cfg -N -q
+  - bin/coverage.sh
+  - pip install -q coveralls
+  - coveralls
+after_failure:
+  - bin/buildout annotate -c travis.cfg
+  - firefox -v
 notifications:
   irc: irc.freenode.org#plonegovbr
