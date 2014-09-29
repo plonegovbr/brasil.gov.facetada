@@ -22,7 +22,7 @@
     name="brasil.gov.facetada"
     directory="static"
     />
-  
+
   <utility
        component=".vocabulary.OrdenacaoVocabularyFactory"
        name="brasil.gov.ordenacao"

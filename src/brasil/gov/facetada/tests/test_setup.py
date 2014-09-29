@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
 
+from Products.GenericSetup.upgrade import listUpgradeSteps
 from brasil.gov.facetada.config import PROJECTNAME
 from brasil.gov.facetada.interfaces import IBrowserLayer
 from brasil.gov.facetada.testing import FUNCTIONAL_TESTING
 from brasil.gov.facetada.testing import INTEGRATION_TESTING
 from plone.browserlayer.utils import registered_layers
-from Products.GenericSetup.upgrade import listUpgradeSteps
 
 import unittest2 as unittest
 

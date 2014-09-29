@@ -1,39 +1,42 @@
+# -*- coding: utf-8 -*-
+
 """ Ordenar widget
 """
+
+from Products.ATContentTypes.criteria import _criterionRegistry
 from Products.Archetypes.public import Schema
+from Products.Archetypes.public import SelectionWidget
 from Products.Archetypes.public import StringField
 from Products.Archetypes.public import StringWidget
-from Products.Archetypes.public import SelectionWidget
 from Products.CMFCore.utils import getToolByName
-from Products.ATContentTypes.criteria import _criterionRegistry
-
+from eea.facetednavigation import EEAMessageFactory as _
 from eea.facetednavigation.widgets import ViewPageTemplateFile
 from eea.facetednavigation.widgets.widget import Widget as AbstractWidget
-from eea.facetednavigation import EEAMessageFactory as _
 
 
 EditSchema = Schema((
     StringField('vocabulary',
-        schemata="default",
-        vocabulary_factory='eea.faceted.vocabularies.PortalVocabularies',
-        widget=SelectionWidget(
-            label=_(u'Filter from vocabulary'),
-            description=_(u'Vocabulary to use to filter sorting criteria. '
-                        u'Leave empty for default sorting criteria.'),
-            i18n_domain="eea"
-        )
-    ),
+                schemata='default',
+                vocabulary_factory='eea.faceted.vocabularies.PortalVocabularies',
+                widget=SelectionWidget(
+                    label=_(u'Filter from vocabulary'),
+                    description=_(u'Vocabulary to use to filter sorting criteria. '
+                                  u'Leave empty for default sorting criteria.'),
+                    i18n_domain='eea'
+                    )
+                ),
     StringField('default',
-        schemata="default",
-        widget=StringWidget(
-            size=25,
-            label=_(u'Default value'),
-            description=_(u"Default sorting index "
-                        u"(e.g. 'effective' or 'effective(reverse)')"),
-            i18n_domain="eea"
-        )
-    ),
+                schemata='default',
+                widget=StringWidget(
+                    size=25,
+                    label=_(u'Default value'),
+                    description=_(u'Default sorting index '
+                                  u"(e.g. 'effective' or 'effective(reverse)')"),
+                    i18n_domain='eea'
+                )
+                ),
 ))
+
 
 class Widget(AbstractWidget):
     """ Widget
@@ -86,7 +89,7 @@ class Widget(AbstractWidget):
         indexObj = catalog_tool.Indexes[indexId]
         # allow DateRecurringIndex that is unknown to atct.
         # events in plone.app.contenttypes use it for start and end
-        if indexObj.meta_type == "DateRecurringIndex":
+        if indexObj.meta_type == 'DateRecurringIndex':
             return ('ATFriendlyDateCriteria',
                     'ATDateRangeCriterion',
                     'ATSortCriterion')

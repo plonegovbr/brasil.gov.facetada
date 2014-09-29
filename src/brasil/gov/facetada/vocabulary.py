@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 from eea.faceted.vocabularies.utils import IVocabularyFactory
-from Products.CMFCore.utils import getToolByName
 from zope.interface import implements
 from zope.schema.vocabulary import SimpleTerm
 from zope.schema.vocabulary import SimpleVocabulary
+
 
 class OrdenacaoVocabulary(object):
     """Vocabulary factory for ordering.
@@ -13,13 +13,13 @@ class OrdenacaoVocabulary(object):
     def __call__(self, context):
         vocab = [
             (u'effective',
-             u'mais antigo'),   
+             u'mais antigo'),
             (u'effective_reverse',
              u'mais recente'),
             (u'sortable_title',
              u'A - Z'),
             (u'sortable_title_reverse',
-             u'Z - A'),]
+             u'Z - A'), ]
         items = [SimpleTerm(k, k, v) for k, v in vocab]
         return SimpleVocabulary(items)
 
