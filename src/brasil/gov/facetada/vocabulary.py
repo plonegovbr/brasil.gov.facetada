@@ -24,3 +24,28 @@ class OrdenacaoVocabulary(object):
         return SimpleVocabulary(items)
 
 OrdenacaoVocabularyFactory = OrdenacaoVocabulary()
+
+
+class TiposVocabulary(object):
+    """Vocabulary factory for ordering.
+    """
+    implements(IVocabularyFactory)
+
+    def __call__(self, context):
+        vocab = [
+            (u'File',
+             u'Arquivo'),
+            (u'Audio',
+             u'Áudio'),
+            (u'Image',
+             u'Imagem'),
+            (u'sc.embedder',
+             u'Multimídia'),
+            (u'collective.nitf.content',
+             u'Notícia'),
+            (u'Document',
+             u'Página'), ]
+        items = [SimpleTerm(k, k, v) for k, v in vocab]
+        return SimpleVocabulary(items)
+
+TiposVocabularyFactory = TiposVocabulary()

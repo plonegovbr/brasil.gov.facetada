@@ -28,5 +28,10 @@
        name="brasil.gov.ordenacao"
   />
 
+  <utility
+       component=".vocabulary.TiposVocabularyFactory"
+       name="brasil.gov.tipos"
+  />
+
 
 </configure>
