@@ -1,0 +1,13 @@
+<configure
+  xmlns:browser="http://namespaces.zope.org/browser"
+  xmlns:faceted="http://namespaces.zope.org/faceted"
+  i18n_domain="brasil.gov.facetada">
+
+  <faceted:widget factory=".widget.Widget" />
+
+  <browser:resource
+    name="brasil.gov.facetada.faceted.widgets.banner.view.js"
+    file="./view.js"
+    />
+
+</configure>

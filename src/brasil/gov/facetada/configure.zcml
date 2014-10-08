@@ -33,5 +33,10 @@
        name="brasil.gov.tipos"
   />
 
+  <utility
+       component=".vocabulary.ImageScaleVocabularyFactory"
+       name="brasil.gov.imagescales"
+  />
+
 
 </configure>

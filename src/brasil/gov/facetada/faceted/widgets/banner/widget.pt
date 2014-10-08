@@ -1,0 +1,28 @@
+<div class="faceted-widget faceted-banner-widget"
+     i18n:domain="brasil.gov.facetada"
+     tal:define="error_view    nocall:context/@@faceted.widget.error;
+                 wid           python:view.data.getId();
+                 hidden        python:view.hidden;
+                 default_value python:view.default;
+                 css           string:faceted-widget faceted-banner-widget;
+                 css           python:hidden and css + ' faceted-widget-hidden' or css;"
+     tal:attributes="id string:${wid}_widget; class css">
+    <fieldset class="widget-fieldset">
+        <legend tal:define="title python:view.data.get('title', '')"
+                tal:content="python:view.translate(title)" i18n:translate="">
+            Banner Widget
+        </legend>
+        <form action="."
+              method="get"
+              tal:on-error="structure python:error_view(error=error, cid=wid)"
+              tal:define="scale view/scale">
+            <a tal:omit-tag="not:view/data/link"
+               href="${view/data/link}">
+                <img src="${scale/src}"
+                     alt="${scale/alt}"
+                     width="${scale/width}"
+                     height="${scale/height}" />
+            </a>
+        </form>
+    </fieldset>
+</div>

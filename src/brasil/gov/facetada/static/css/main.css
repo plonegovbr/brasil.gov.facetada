@@ -184,3 +184,78 @@
     max-width: 90px;
     width: 100%;
 }
+
+/*
+ * Widget de banner - Facetada
+ */
+body.template-configure_faceted-html .image-upload-dialog #content-core {
+    margin-top: 0;
+}
+
+body.template-configure_faceted-html .image-upload-dialog {
+    font-size: 1.3em;
+}
+
+body.template-configure_faceted-html .image-upload-dialog textarea {
+    width: 100%;
+}
+
+body.template-configure_faceted-html .image-upload-dialog button.btn {
+    font-size: 1.2em;
+}
+
+body.template-configure_faceted-html .image-upload-dialog td {
+    cursor: pointer;
+}
+
+body.template-configure_faceted-html .image-upload-dialog tr.selected td {
+    background-color: #ffa;
+}
+
+body.template-configure_faceted-html .image-upload-dialog span.title {
+    float: left;
+    width: 100%;
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+body.template-configure_faceted-html .image-upload-dialog span.breadcrumb {
+    float: left;
+    margin-bottom: 1em;
+    width: 100%;
+}
+
+body.template-configure_faceted-html .image-upload-dialog #folderlisting-main-table {
+    float: left;
+    overflow: auto;
+    width: 70%;
+    height: 17em;
+}
+
+body.template-configure_faceted-html .image-upload-dialog #listing-table {
+    border: #CCC 1px solid;
+}
+
+body.template-configure_faceted-html .image-upload-dialog .preview {
+    float: left;
+    margin-left: 0.9em;
+    width: 17em;
+    height: 17em;
+}
+
+body.template-configure_faceted-html .image-upload-dialog .table-align {
+    display: table-cell;
+    width: 17em;
+    height: 17em;
+    vertical-align: middle;
+}
+
+#content .faceted-banner-widget img {
+    display: block;
+    margin: 0 auto;
+    border-radius: 0;
+}
+
+body.template-configure_faceted-html #right-area {
+    width: auto;
+}

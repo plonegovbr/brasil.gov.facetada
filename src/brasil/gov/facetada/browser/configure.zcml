@@ -9,5 +9,6 @@
 
   <!-- Conteudos -->
   <include package='.faceted' />
+  <include package='.scaleimage' />
 
 </configure>
