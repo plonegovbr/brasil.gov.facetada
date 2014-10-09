@@ -39,6 +39,9 @@ setup(
     zip_safe=False,
     install_requires=[
         'eea.facetednavigation',
+        'five.pt',
+        'plone.api',
+        'plone.app.contenttypes',
         'plone.app.upgrade',
         'Products.CMFPlone >=4.3',
         'Products.GenericSetup',
