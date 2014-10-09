@@ -16,6 +16,8 @@
 
   <include package=".faceted" />
 
+  <include file="skins.zcml" />
+
   <includeDependencies package="." />
 
   <browser:resourceDirectory

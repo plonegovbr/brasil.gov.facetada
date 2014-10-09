@@ -16,6 +16,7 @@ import logging
 logger = logging.getLogger('brasil.gov.facetada.faceted.widgets.banner')
 
 EditSchema = Schema((
+
     StringField('imagem',
                 schemata='default',
                 required=True,
