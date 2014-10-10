@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 from plone.app.robotframework.testing import AUTOLOGIN_LIBRARY_FIXTURE
 from plone.app.testing import FunctionalTesting
 from plone.app.testing import IntegrationTesting
@@ -14,12 +13,17 @@ class Fixture(PloneSandboxLayer):
 
     def setUpZope(self, app, configurationContext):
         # Load ZCML
+        import eea.facetednavigation
+        self.loadZCML(name='meta.zcml', package=eea.facetednavigation)
+        self.loadZCML(package=eea.facetednavigation)
+        z2.installProduct(app, 'eea.facetednavigation')
         import brasil.gov.facetada
         self.loadZCML(package=brasil.gov.facetada)
 
     def setUpPloneSite(self, portal):
         self.applyProfile(
             portal, 'brasil.gov.facetada:default')
+        portal.portal_workflow.setDefaultChain('simple_publication_workflow')
 
 
 FIXTURE = Fixture()
