@@ -35,7 +35,7 @@ class AplicaFacetadaTestCase(unittest.TestCase):
     def testCriteria(self):
         self.setupContent(self.portal)
         cids = ICriteria(self.folder).keys()
-        self.assertEqual(cids, [u'c0', u'c1', u'c2', u'c3', u'c4'])
+        self.assertTrue(u'c1' in cids)
 
     def testWidget(self):
         self.setupContent(self.portal)
