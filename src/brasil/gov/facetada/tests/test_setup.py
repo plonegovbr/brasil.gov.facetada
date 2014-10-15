@@ -22,11 +22,41 @@ class BaseTestCase(unittest.TestCase):
 
     profile = 'brasil.gov.facetada:default'
 
-    def setUp(self):
+    def setUp(self, from_version='1000', to_version='1010'):
         self.portal = self.layer['portal']
         self.qi = self.portal['portal_quickinstaller']
         self.wt = self.portal['portal_workflow']
         self.st = self.portal['portal_setup']
+        self.from_version = from_version
+        self.to_version = to_version
+
+    def _get_upgrade_step(self, title):
+        """Get one of the upgrade steps.
+
+        Keyword arguments:
+        title -- the title used to register the upgrade step
+        """
+        self.st.setLastVersionForProfile(self.profile, self.from_version)
+        upgrades = self.st.listUpgrades(self.profile)
+        steps = [s for s in upgrades[0] if s['title'] == title]
+        return steps[0] if steps else None
+
+    def _do_upgrade_step(self, step):
+        """Execute an upgrade step.
+
+        Keyword arguments:
+        step -- the step we want to run
+        """
+        request = self.layer['request']
+        request.form['profile_id'] = self.profile
+        request.form['upgrades'] = [step['id']]
+        self.st.manage_doUpgrades(request=request)
+
+    def _how_many_upgrades_to_do(self):
+        self.st.setLastVersionForProfile(self.profile, self.from_version)
+        upgrades = self.st.listUpgrades(self.profile)
+        assert len(upgrades) > 0
+        return len(upgrades[0])
 
 
 class TestInstall(BaseTestCase):
@@ -73,3 +103,18 @@ class TestUninstall(BaseTestCase):
     def test_browser_layer_removed_uninstalled(self):
         self.qi.uninstallProducts(products=[PROJECTNAME])
         self.assertNotIn(IBrowserLayer, registered_layers())
+
+
+class Upgrade1000to1010TestCase(BaseTestCase):
+
+    def setUp(self):
+        BaseTestCase.setUp(self, u'1000', u'1010')
+
+    def test_upgrade_to_1010_registrations(self):
+        self.assertEqual(self._how_many_upgrades_to_do(), 1)
+
+    def test_upgrade1010(self):
+        title = u'Atualiza portal para versao 1010'
+        step = self._get_upgrade_step(title)
+        self.assertIsNotNone(step)
+        self._do_upgrade_step(step)
