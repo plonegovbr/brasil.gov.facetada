@@ -90,3 +90,32 @@ class WidgetBannerTestCase(unittest.TestCase):
         self.assertTrue('"path": "/plone/imagem-de-plonegovbr", ' in self.browser.contents)
         self.assertTrue('"scale": "mini", ' in self.browser.contents)
         self.assertTrue('"title": "Imagem de PloneGovBR", ' in self.browser.contents)
+        # Testa vocabulario de scales
+        self.removeCriteria()
+        _ = self.handler(wtype='checkbox', addWidget_button=True)
+        criteria = self.config.get_criteria()
+        criterion_id = criteria[0].getId()
+        form = {
+            criterion_id + '_title': 'Escalas de Imagem',
+            criterion_id + '_widget': 'checkbox',
+            criterion_id + '_index': 'object_provides',
+            criterion_id + '_vocabulary': 'brasil.gov.imagescales',
+            'saveChanges_button': True,
+        }
+        _ = self.handler(**form)
+        app = self.layer['app']
+        transaction.commit()
+        self.browser = Browser(app)
+        self.folderUrl = self.folder.absolute_url()
+        criterion = _
+        criterion = criteria[0]
+        self.assertEqual(criterion.title, u'Escalas de Imagem')
+        self.assertEqual(criterion.vocabulary, u'brasil.gov.imagescales')
+        self.browser.open(self.folderUrl)
+        self.assertTrue('listing' in self.browser.contents)
+        self.assertTrue('mini' in self.browser.contents)
+        self.assertTrue('large' in self.browser.contents)
+        self.assertTrue('preview' in self.browser.contents)
+        self.assertTrue('tile' in self.browser.contents)
+        self.assertTrue('thumb' in self.browser.contents)
+        self.assertTrue('icon' in self.browser.contents)
