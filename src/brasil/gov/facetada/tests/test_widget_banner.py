@@ -79,7 +79,14 @@ class WidgetBannerTestCase(unittest.TestCase):
         self.browser.open(self.folderUrl)
         # Verifica se o widget foi adicionado
         self.assertTrue('faceted-banner-widget' in self.browser.contents)
-        # Testa se ñao houve erro de renderizacao
+        # Testa se nao houve erro de renderizacao
         self.assertTrue('exceptions.AttributeError' not in self.browser.contents)
         # Verifica se o link da imagem existe
         self.assertTrue('href="http://www.brasil.gov.br"' in self.browser.contents)
+        # Verifica a browser view de ScaleImage
+        self.browser.open('/plone/imagem-de-plonegovbr/@@scaleimage?scale=mini')
+        self.assertTrue('"height": 85,' in self.browser.contents)
+        self.assertTrue('"mimetype": "image/png", ' in self.browser.contents)
+        self.assertTrue('"path": "/plone/imagem-de-plonegovbr", ' in self.browser.contents)
+        self.assertTrue('"scale": "mini", ' in self.browser.contents)
+        self.assertTrue('"title": "Imagem de PloneGovBR", ' in self.browser.contents)
