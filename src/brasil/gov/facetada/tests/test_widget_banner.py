@@ -5,6 +5,7 @@ from plone.app.testing import TEST_USER_ID
 from plone.app.testing import setRoles
 from plone.testing.z2 import Browser
 from zope.component import getMultiAdapter
+#from plone import api
 
 import os
 import transaction
@@ -36,6 +37,7 @@ class WidgetBannerTestCase(unittest.TestCase):
                                   title='Imagem de PloneGovBR',
                                   image=TEST_PNG_FILE)
         self.imagem = self.portal['imagem-de-plonegovbr']
+        self.imagemUid = self.imagem.UID()
         subtyper = getMultiAdapter((self.folder, self.request), name=u'faceted_subtyper')
         self.assertTrue(subtyper.can_enable)
         subtyper.enable()
@@ -97,6 +99,11 @@ class WidgetBannerTestCase(unittest.TestCase):
         self.assertTrue('"title": "Imagem de PloneGovBR", ' in self.browser.contents)
         # Verifica a browser view de ScaleImage testando path
         self.browser.open('/plone/@@scaleimage?path=/plone/imagem-de-plonegovbr&scale=thumb')
+        self.assertTrue('"mimetype": "image/png", ' in self.browser.contents)
+        self.assertTrue('"path": "/plone/imagem-de-plonegovbr", ' in self.browser.contents)
+        self.assertTrue('"title": "Imagem de PloneGovBR", ' in self.browser.contents)
+        # Verifica a browser view de ScaleImage testando uid
+        self.browser.open('/plone/@@scaleimage?scale=thumb&uid=' + self.imagemUid)
         self.assertTrue('"mimetype": "image/png", ' in self.browser.contents)
         self.assertTrue('"path": "/plone/imagem-de-plonegovbr", ' in self.browser.contents)
         self.assertTrue('"title": "Imagem de PloneGovBR", ' in self.browser.contents)
