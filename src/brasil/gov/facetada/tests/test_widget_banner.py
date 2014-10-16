@@ -90,6 +90,10 @@ class WidgetBannerTestCase(unittest.TestCase):
         self.assertTrue('"path": "/plone/imagem-de-plonegovbr", ' in self.browser.contents)
         self.assertTrue('"scale": "mini", ' in self.browser.contents)
         self.assertTrue('"title": "Imagem de PloneGovBR", ' in self.browser.contents)
+        self.browser.open('/plone/imagem-de-plonegovbr/@@scaleimage?width=200&height=200')
+        self.assertTrue('"mimetype": "image/png", ' in self.browser.contents)
+        self.assertTrue('"path": "/plone/imagem-de-plonegovbr", ' in self.browser.contents)
+        self.assertTrue('"title": "Imagem de PloneGovBR", ' in self.browser.contents)
         # Testa vocabulario de scales
         self.removeCriteria()
         _ = self.handler(wtype='checkbox', addWidget_button=True)
