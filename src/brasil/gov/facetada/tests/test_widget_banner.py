@@ -83,14 +83,20 @@ class WidgetBannerTestCase(unittest.TestCase):
         self.assertTrue('exceptions.AttributeError' not in self.browser.contents)
         # Verifica se o link da imagem existe
         self.assertTrue('href="http://www.brasil.gov.br"' in self.browser.contents)
-        # Verifica a browser view de ScaleImage
+        # Verifica a browser view de ScaleImage testando scale
         self.browser.open('/plone/imagem-de-plonegovbr/@@scaleimage?scale=mini')
         self.assertTrue('"height": 85,' in self.browser.contents)
         self.assertTrue('"mimetype": "image/png", ' in self.browser.contents)
         self.assertTrue('"path": "/plone/imagem-de-plonegovbr", ' in self.browser.contents)
         self.assertTrue('"scale": "mini", ' in self.browser.contents)
         self.assertTrue('"title": "Imagem de PloneGovBR", ' in self.browser.contents)
+        # Verifica a browser view de ScaleImage testando width e height
         self.browser.open('/plone/imagem-de-plonegovbr/@@scaleimage?width=200&height=200')
+        self.assertTrue('"mimetype": "image/png", ' in self.browser.contents)
+        self.assertTrue('"path": "/plone/imagem-de-plonegovbr", ' in self.browser.contents)
+        self.assertTrue('"title": "Imagem de PloneGovBR", ' in self.browser.contents)
+        # Verifica a browser view de ScaleImage testando path
+        self.browser.open('/plone/@@scaleimage?path=/plone/imagem-de-plonegovbr&scale=thumb')
         self.assertTrue('"mimetype": "image/png", ' in self.browser.contents)
         self.assertTrue('"path": "/plone/imagem-de-plonegovbr", ' in self.browser.contents)
         self.assertTrue('"title": "Imagem de PloneGovBR", ' in self.browser.contents)
