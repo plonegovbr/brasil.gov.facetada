@@ -5,7 +5,6 @@ from plone.app.testing import TEST_USER_ID
 from plone.app.testing import setRoles
 from plone.testing.z2 import Browser
 from zope.component import getMultiAdapter
-#from plone import api
 
 import os
 import transaction
