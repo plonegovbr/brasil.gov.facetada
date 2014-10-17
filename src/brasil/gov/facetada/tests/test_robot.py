@@ -16,7 +16,7 @@ def test_suite():
         if doc.startswith('test_') and doc.endswith('.robot')
     ]
     # XXX: skip all RF tests meanwhile
-    tests = []
+    #tests = []
     suite.addTests([
         layered(robotsuite.RobotTestSuite(t), layer=ROBOT_TESTING)
         for t in tests
