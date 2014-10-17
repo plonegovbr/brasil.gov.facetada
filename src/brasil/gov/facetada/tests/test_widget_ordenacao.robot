@@ -17,10 +17,8 @@ ${description_selector} =  textarea#form-widgets-IDublinCore-description
 Test ORDENAR
     # Loga
     Log in as site owner
-    Go to  ${PLONE_URL}
     # Adiciona Pasta
-    Open Add New Menu
-    Click Link  css=a#folder
+    Go to  ${PLONE_URL}/portal_factory/Folder/folder.2014-10-17.5237839860/edit
     Page Should Contain  Add Folder
     Input Text  css=#title  Facetada
     Input Text  css=#description  Descricao
