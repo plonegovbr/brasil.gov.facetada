@@ -4,7 +4,7 @@ from brasil.gov.facetada.interfaces import IBrowserLayer
 from brasil.gov.facetada.testing import FUNCTIONAL_TESTING
 from brasil.gov.facetada.testing import INTEGRATION_TESTING
 from plone.browserlayer.utils import registered_layers
-from Products.GenericSetup.upgrade import listUpgradeSteps
+# from Products.GenericSetup.upgrade import listUpgradeSteps
 
 import unittest2 as unittest
 
@@ -75,18 +75,18 @@ class TestInstall(BaseTestCase):
         )
 
 
-class TestUpgrade(BaseTestCase):
-    """Ensure product upgrades work."""
-
-    def test_to1010_available(self):
-
-        upgradeSteps = listUpgradeSteps(self.st,
-                                        self.profile,
-                                        '1000')
-        step = [step for step in upgradeSteps
-                if (step[0]['dest'] == ('1010',))
-                and (step[0]['source'] == ('1000',))]
-        self.assertEqual(len(step), 1)
+# class TestUpgrade(BaseTestCase):
+#     """Ensure product upgrades work."""
+#
+#     def test_to1010_available(self):
+#
+#         upgradeSteps = listUpgradeSteps(self.st,
+#                                         self.profile,
+#                                         '1000')
+#         step = [step for step in upgradeSteps
+#                 if (step[0]['dest'] == ('1010',))
+#                 and (step[0]['source'] == ('1000',))]
+#         self.assertEqual(len(step), 1)
 
 
 class TestUninstall(BaseTestCase):
