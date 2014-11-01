@@ -13,14 +13,10 @@ class OrdenacaoVocabulary(object):
 
     def __call__(self, context):
         vocab = [
-            (u'effective',
-             u'mais antigo'),
-            (u'effective_reverse',
-             u'mais recente'),
-            (u'sortable_title',
-             u'A - Z'),
-            (u'sortable_title_reverse',
-             u'Z - A'), ]
+            (u'effective', u'mais antigo'),
+            (u'effective_reverse', u'mais recente'),
+            (u'sortable_title', u'A - Z'),
+            (u'sortable_title_reverse', u'Z - A'), ]
         items = [SimpleTerm(k, k, v) for k, v in vocab]
         return SimpleVocabulary(items)
 
@@ -28,24 +24,18 @@ OrdenacaoVocabularyFactory = OrdenacaoVocabulary()
 
 
 class TiposVocabulary(object):
-    """Vocabulary factory for ordering.
+    """Vocabulary factory for types.
     """
     implements(IVocabularyFactory)
 
     def __call__(self, context):
         vocab = [
-            (u'File',
-             u'Arquivo'),
-            (u'Audio',
-             u'Áudio'),
-            (u'Image',
-             u'Imagem'),
-            (u'sc.embedder',
-             u'Multimídia'),
-            (u'collective.nitf.content',
-             u'Notícia'),
-            (u'Document',
-             u'Página'), ]
+            (u'File', u'Arquivo'),
+            (u'Audio', u'Áudio'),
+            (u'Image', u'Imagem'),
+            (u'sc.embedder', u'Multimídia'),
+            (u'collective.nitf.content', u'Notícia'),
+            (u'Document', u'Página'), ]
         items = [SimpleTerm(k, k, v) for k, v in vocab]
         return SimpleVocabulary(items)
 
