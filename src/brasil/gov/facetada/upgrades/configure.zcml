@@ -3,7 +3,4 @@
     xmlns:i18n="http://namespaces.zope.org/i18n"
     i18n_domain="brasil.gov.facetada">
 
-  <!-- Passos de atualizacao -->
-  <include package=".v1010" />
-
 </configure>

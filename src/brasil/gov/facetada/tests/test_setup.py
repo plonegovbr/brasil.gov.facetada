@@ -1,11 +1,10 @@
 # -*- coding: utf-8 -*-
-
-from Products.GenericSetup.upgrade import listUpgradeSteps
 from brasil.gov.facetada.config import PROJECTNAME
 from brasil.gov.facetada.interfaces import IBrowserLayer
 from brasil.gov.facetada.testing import FUNCTIONAL_TESTING
 from brasil.gov.facetada.testing import INTEGRATION_TESTING
 from plone.browserlayer.utils import registered_layers
+from Products.GenericSetup.upgrade import listUpgradeSteps
 
 import unittest2 as unittest
 
@@ -103,18 +102,3 @@ class TestUninstall(BaseTestCase):
     def test_browser_layer_removed_uninstalled(self):
         self.qi.uninstallProducts(products=[PROJECTNAME])
         self.assertNotIn(IBrowserLayer, registered_layers())
-
-
-class Upgrade1000to1010TestCase(BaseTestCase):
-
-    def setUp(self):
-        BaseTestCase.setUp(self, u'1000', u'1010')
-
-    def test_upgrade_to_1010_registrations(self):
-        self.assertEqual(self._how_many_upgrades_to_do(), 1)
-
-    def test_upgrade1010(self):
-        title = u'Atualiza portal para versao 1010'
-        step = self._get_upgrade_step(title)
-        self.assertIsNotNone(step)
-        self._do_upgrade_step(step)
