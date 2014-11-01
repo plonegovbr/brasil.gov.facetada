@@ -29,6 +29,11 @@
 
   <!-- Oculta profile -->
   <utility
+      factory=".config.HiddenProducts"
+      name="brasil.gov.facetada"
+      />
+
+  <utility
       factory=".config.HiddenProfiles"
       name="brasil.gov.facetada"
       />
