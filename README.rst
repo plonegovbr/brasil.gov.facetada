@@ -8,7 +8,7 @@
 Introdução
 -----------
 
-Este pacote provê a instalação de produto para busca multifacetada, customização de visão sumária e widget de ordenação para o `Portal Padrão <http://portalpadrao.gov.br`_.
+Este pacote provê a instalação de produto para busca multifacetada, customização de visão sumária e widget de ordenação para o `Portal Padrão <http://portalpadrao.plone.org.br>`_.
 
 Estado deste pacote
 ---------------------
