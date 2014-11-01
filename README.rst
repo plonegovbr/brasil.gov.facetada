@@ -1,5 +1,5 @@
 ***************************************************************
-`.gov.br: Plugin de Busca Multifacetada`
+`.gov.br: Suporte a Busca Multifacetada`
 ***************************************************************
 
 .. contents:: Conteúdo
@@ -8,13 +8,13 @@
 Introdução
 -----------
 
-Este pacote provê a instalação de produto para busca multifacetada, customização de visão sumária e widget de ordenação para o Portal Padrão.
+Este pacote provê a instalação de produto para busca multifacetada, customização de visão sumária e widget de ordenação para o `Portal Padrão <http://portalpadrao.gov.br`_.
 
 Estado deste pacote
 ---------------------
 
 O **brasil.gov.facetada** tem testes automatizados e, a cada alteração em seu
-código os testes são executados pelo serviço Travis. 
+código os testes são executados pelo serviço Travis.
 
 O estado atual dos testes pode ser visto nas imagens a seguir:
 

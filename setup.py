@@ -1,10 +1,10 @@
 # -*- coding:utf-8 -*-
-
 from setuptools import find_packages
 from setuptools import setup
 
+
 version = '1.0a1'
-description = 'Plugin de busca multifacetada'
+description = u'Suporte à busca multifacetada para Portal Padrão'
 long_description = (
     open('README.rst').read() + '\n' +
     open('CONTRIBUTORS.rst').read() + '\n' +
