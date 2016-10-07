@@ -23,7 +23,7 @@ EditSchema = Schema((
                     description=_(u'Vocabulary to use to filter sorting criteria. '
                                   u'Leave empty for default sorting criteria.'),
                     i18n_domain='eea'
-                    )
+                )
                 ),
     StringField('default',
                 schemata='default',
