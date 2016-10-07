@@ -16,7 +16,6 @@ import logging
 logger = logging.getLogger('brasil.gov.facetada.faceted.widgets.banner')
 
 EditSchema = Schema((
-
     StringField('imagem',
                 schemata='default',
                 required=True,
@@ -24,8 +23,9 @@ EditSchema = Schema((
                     label=_(u'Imagem'),
                     description=_(u'Selecao ou upload de imagem'),
                     i18n_domain='brasil.gov.facetada'
-                    )
+                )
                 ),
+
     StringField('link',
                 schemata='default',
                 widget=StringWidget(
@@ -34,6 +34,7 @@ EditSchema = Schema((
                     i18n_domain='brasil.gov.facetada'
                 )
                 ),
+
     StringField('scales',
                 schemata='default',
                 required=True,
