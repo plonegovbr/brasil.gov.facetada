@@ -41,11 +41,12 @@ class AplicaFacetadaTestCase(unittest.TestCase):
         self.setupContent(self.portal)
         _ = self.handler(wtype='checkbox', addWidget_button=True)
         criteria = self.config.get_criteria()
-        criterion_id = criteria[1].getId()
+        criterion_id = criteria[2].getId()
         form = {
             criterion_id + '_title': 'Tipo de itens',
             criterion_id + '_widget': 'checkbox',
             criterion_id + '_vocabulary': 'brasil.gov.tipos',
+            criterion_id + '_index': 'portal_type',
             'saveChanges_button': True,
         }
         _ = self.handler(**form)
@@ -55,7 +56,7 @@ class AplicaFacetadaTestCase(unittest.TestCase):
         self.browser = Browser(app)
         self.folderUrl = self.folder.absolute_url()
         criterion = _
-        criterion = criteria[1]
+        criterion = criteria[2]
         self.assertEqual(criterion.widget, u'checkbox')
         self.assertEqual(criterion.title, u'Tipo de itens')
         self.assertEqual(criterion.index, u'portal_type')

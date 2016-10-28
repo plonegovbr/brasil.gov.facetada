@@ -38,7 +38,12 @@ setup(
     include_package_data=True,
     zip_safe=False,
     install_requires=[
-        'eea.facetednavigation',
+        # ate o momento desta correção a última versão do produto 
+        # eea.facetednavigation era a versão 10rc1 e não era estável
+        # gerando o seguinte erro ao carregar o widget:
+        # AttributeError: type object 'Widget' has no attribute 'edit_schema'
+        'eea.facetednavigation < 10',
+        'five.grok',
         'five.pt',
         'plone.api',
         'plone.app.contenttypes',
