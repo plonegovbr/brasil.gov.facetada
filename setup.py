@@ -3,7 +3,7 @@ from setuptools import find_packages
 from setuptools import setup
 
 
-version = '1.0b1'
+version = '1.0b2.dev0'
 description = u'Suporte à busca multifacetada para Portal Padrão'
 long_description = (
     open('README.rst').read() + '\n' +
