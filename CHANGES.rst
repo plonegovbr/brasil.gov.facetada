@@ -1,7 +1,7 @@
 Alterações
 -------------
 
-1.0a2 (unreleased)
+1.0b1 (2016-11-30)
 ^^^^^^^^^^^^^^^^^^
 
 - Pina eea.facetednavigation < 10 para evitar o erro
