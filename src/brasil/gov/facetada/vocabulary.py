@@ -20,6 +20,7 @@ class OrdenacaoVocabulary(object):
         items = [SimpleTerm(k, k, v) for k, v in vocab]
         return SimpleVocabulary(items)
 
+
 OrdenacaoVocabularyFactory = OrdenacaoVocabulary()
 
 
@@ -38,6 +39,7 @@ class TiposVocabulary(object):
             (u'Document', u'Página'), ]
         items = [SimpleTerm(k, k, v) for k, v in vocab]
         return SimpleVocabulary(items)
+
 
 TiposVocabularyFactory = TiposVocabulary()
 
@@ -60,5 +62,6 @@ class ImageScaleVocabulary(object):
                     name = line
                     image_scales[name] = (splits[0], )
         return SimpleVocabulary.fromValues(image_scales)
+
 
 ImageScaleVocabularyFactory = ImageScaleVocabulary()
