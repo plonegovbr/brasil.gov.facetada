@@ -4,7 +4,11 @@ Alterações
 1.0b2 (unreleased)
 ^^^^^^^^^^^^^^^^^^
 
-- Nothing changed yet.
+- Remove dependência no five.grok.
+  [claytonc]
+
+- Corrige a classe ``ScaleImage`` que pegava a imagem duas vezes.
+  [claytonc]
 
 
 1.0b1 (2016-11-30)

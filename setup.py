@@ -43,7 +43,6 @@ setup(
         # gerando o seguinte erro ao carregar o widget:
         # AttributeError: type object 'Widget' has no attribute 'edit_schema'
         'eea.facetednavigation < 10',
-        'five.grok',
         'five.pt',
         'plone.api',
         'plone.app.contenttypes',

@@ -1,20 +1,14 @@
 # -*- coding: utf-8 -*-
-from Products.CMFCore.utils import getToolByName
-from five import grok
 from plone import api
-from zope.interface import Interface
+from Products.Five.browser import BrowserView
 import cgi
 import json
 
 
-class ScaleImage(grok.View):
+class ScaleImage(BrowserView):
     """
     Returns JSON with resized image information
     """
-
-    grok.context(Interface)
-    grok.require('zope2.View')
-    grok.name('scaleimage')
 
     def update(self):
         """Parse params
@@ -81,25 +75,16 @@ class ScaleImage(grok.View):
         return image_data
 
     def render(self):
-        """Return scaled image data for use with AJAX request
-        """
+        """Return scaled image data for use with AJAX request"""
         data = []
 
         if self.path or self.uid:
-            catalog = getToolByName(self.context, 'portal_catalog')
             for path in self.path:
-                image = None
-                brain = catalog(path={'query': path, 'depth': 0})
-                if brain:
-                    image = brain[0].getObject()
+                image = api.content.get(path=path)
                 if image:
                     image_data = self._get_image_data(image)
                     data.append(image_data)
             for uid in self.uid:
-                image = None
-                brain = catalog(UID=uid)
-                if brain:
-                    image = brain[0].getObject()
                 image = api.content.get(UID=uid)
                 if image:
                     image_data = self._get_image_data(image)
@@ -110,3 +95,7 @@ class ScaleImage(grok.View):
         if len(data) == 1:
             data = data[0]
         return self._to_json(data)
+
+    def __call__(self):
+        self.update()
+        return self.render()
