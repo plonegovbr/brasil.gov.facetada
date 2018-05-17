@@ -1,0 +1,83 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2018-05-07 13:37+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0\n"
+"Language-Code: en\n"
+"Language-Name: English\n"
+"Preferred-Encodings: utf-8 latin1\n"
+"Domain: DOMAIN\n"
+
+#: brasil/gov/facetada/profiles.zcml:16
+msgid ".gov.br: Busca Multifacetada"
+msgstr ".gov.br: Busca Multifacetada"
+
+#: brasil/gov/facetada/profiles.zcml:25
+msgid ".gov.br: Busca Multifacetada (Remoção do Pacote)"
+msgstr ".gov.br: Busca Multifacetada (Remoção do Pacote)"
+
+#: brasil/gov/facetada/faceted/widgets/banner/widget.py:65
+msgid "Banner"
+msgstr "Banner"
+
+#: brasil/gov/facetada/faceted/widgets/ordenar/widget.py:33
+msgid "Default sorting index (e.g. 'effective' or 'effective(reverse)')"
+msgstr "Índice de classificação padrão (por exemplo, 'efetivo' ou 'efetivo (reverso)')"
+
+#: brasil/gov/facetada/faceted/widgets/ordenar/widget.py:32
+msgid "Default value"
+msgstr "Valor padrão"
+
+#: brasil/gov/facetada/browser/faceted/configure.zcml:15
+msgid "Faceted items summary view"
+msgstr "Visualização de resumo dos itens facetados"
+
+#: brasil/gov/facetada/faceted/widgets/ordenar/widget.py:22
+msgid "Filter from vocabulary"
+msgstr "Filtrar do vocabulário"
+
+#: brasil/gov/facetada/faceted/widgets/banner/widget.py:23
+msgid "Imagem"
+msgstr "Imagem"
+
+#: brasil/gov/facetada/faceted/widgets/banner/widget.py:33
+msgid "Informe o link para o banner"
+msgstr "Informe o link para o banner"
+
+#: brasil/gov/facetada/profiles.zcml:16
+msgid "Instala o suporte à busca multifacetada para o Portal Padrão"
+msgstr "Instala o suporte à busca multifacetada para o Portal Padrão"
+
+#: brasil/gov/facetada/faceted/widgets/banner/widget.py:32
+msgid "Link"
+msgstr "Link"
+
+#: brasil/gov/facetada/faceted/widgets/ordenar/widget.py:46
+msgid "Ordenar"
+msgstr "Ordenar"
+
+#: brasil/gov/facetada/profiles.zcml:25
+msgid "Remove o suporte à busca multifacetada para o Portal Padrão"
+msgstr "Remove o suporte à busca multifacetada para o Portal Padrão"
+
+#: brasil/gov/facetada/faceted/widgets/banner/widget.py:44
+msgid "Selecao do tamanho da imagem"
+msgstr "Selecao do tamanho da imagem"
+
+#: brasil/gov/facetada/faceted/widgets/banner/widget.py:24
+msgid "Selecao ou upload de imagem"
+msgstr "Selecao ou upload de imagem"
+
+#: brasil/gov/facetada/faceted/widgets/banner/widget.py:43
+msgid "Tamanho da imagem"
+msgstr "Tamanho da imagem"
+
+#: brasil/gov/facetada/faceted/widgets/ordenar/widget.py:23
+msgid "Vocabulary to use to filter sorting criteria. Leave empty for default sorting criteria."
+msgstr "Vocabulário a ser usado para filtrar os critérios de classificação. Deixar vazio para os critérios de classificação padrão"

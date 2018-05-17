@@ -1,11 +1,14 @@
 <configure
     xmlns="http://namespaces.zope.org/zope"
     xmlns:browser="http://namespaces.zope.org/browser"
+    xmlns:i18n="http://namespaces.zope.org/i18n"
     i18n_domain="brasil.gov.facetada">
 
   <include package="Products.CMFCore" file="permissions.zcml" />
 
   <include package="eea.facetednavigation" file="meta.zcml" />
+
+  <i18n:registerTranslations directory="locales" />
 
   <include file="dependencies.zcml" />
 

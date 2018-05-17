@@ -4,6 +4,10 @@ Alterações
 1.0b2 (unreleased)
 ^^^^^^^^^^^^^^^^^^
 
+- Traduz em pt_BR domínios eea e plone relacionados ao brasil.gov.facetada.
+  (closes `#10`_)
+  [idgserpro]
+
 - Remove dependência no five.grok.
   [claytonc]
 
@@ -27,3 +31,4 @@ Alterações
     [dbarbato]
 
 .. _`#6`: https://github.com/plonegovbr/brasil.gov.facetada/issues/6
+.. _`#10`: https://github.com/plonegovbr/brasil.gov.facetada/issues/10
