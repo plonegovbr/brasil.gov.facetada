@@ -1,8 +1,8 @@
 Alterações
 -------------
 
-1.0b2 (unreleased)
-^^^^^^^^^^^^^^^^^^
+1.0rc1 (2018-05-28)
+^^^^^^^^^^^^^^^^^^^
 
 - Traduz em pt_BR domínios eea e plone relacionados ao brasil.gov.facetada (fecha `#10 <https://github.com/plonegovbr/brasil.gov.facetada/issues/10>`_)
   [idgserpro]
