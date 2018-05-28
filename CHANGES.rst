@@ -4,8 +4,7 @@ Alterações
 1.0b2 (unreleased)
 ^^^^^^^^^^^^^^^^^^
 
-- Traduz em pt_BR domínios eea e plone relacionados ao brasil.gov.facetada.
-  (closes `#10`_)
+- Traduz em pt_BR domínios eea e plone relacionados ao brasil.gov.facetada (fecha `#10 <https://github.com/plonegovbr/brasil.gov.facetada/issues/10>`_)
   [idgserpro]
 
 - Remove dependência no five.grok.
@@ -18,17 +17,12 @@ Alterações
 1.0b1 (2016-11-30)
 ^^^^^^^^^^^^^^^^^^
 
-- Pina eea.facetednavigation < 10 para evitar o erro
-  AttributeError: type object 'Widget' has no attribute 'edit_schema'.
-  (closes `#6`_)
+- Pina eea.facetednavigation < 10 para evitar ``AttributeError`` (fecha `#6 <https://github.com/plonegovbr/brasil.gov.facetada/issues/6>`_)
   [idgserpro]
 
 
 1.0a1 (2014-11-01)
 ^^^^^^^^^^^^^^^^^^
 
-  * Versão inicial do pacote.
-    [dbarbato]
-
-.. _`#6`: https://github.com/plonegovbr/brasil.gov.facetada/issues/6
-.. _`#10`: https://github.com/plonegovbr/brasil.gov.facetada/issues/10
+- Versão inicial do pacote.
+  [dbarbato]
